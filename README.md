@@ -1,7 +1,7 @@
 # GCP_Practice_Project
 
 ## Google Cloud Fundamentals: Getting Started with GKE:  
-![image 1](Mail Snapshots/1.PNG)  
+![image 1](Mails Snapshots/1.PNG)  
 
 ```sh
 gcloud config set project qwiklabs-gcp-00-d9731b439b2b
