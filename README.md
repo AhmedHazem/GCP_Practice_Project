@@ -1,10 +1,9 @@
-# GCP_Practice_Project
+# GCP_Practice_Project_Overview
 
 ## Lab: Google Cloud Fundamentals: Getting Started with GKE:  
 
 
 ```sh
-gcloud config set project qwiklabs-gcp-00-d9731b439b2b
 
 #Confirm that needed APIs are enabled
 gcloud services enable container.googleapis.com
@@ -32,29 +31,27 @@ kubectl get services
 
 ```sh
 #Create a virtual machine using the GCP Console
-gcloud beta compute --project=qwiklabs-gcp-02-d18343694552 instances create my-vm-1 --zone=us-central1-a --machine-type=e2-medium --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=324311420145-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --tags=http-server --image=debian-9-stretch-v20200910 --image-project=debian-cloud --boot-disk-size=10GB --boot-disk-type=pd-standard --boot-disk-device-name=my-vm-1 --reservation-affinity=any
+gcloud compute instances create my-vm-1 --zone "us-central1-a" --machine-type "e2-medium" 
+--subnet "default" --image-project "debian-cloud" --image "debian-9-stretch-v20190213" --tags http
 
-gcloud compute --project=qwiklabs-gcp-02-d18343694552 firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server
-
+gcloud compute firewall-rules create allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=http:80 --target-tags=http
 
 # Create a virtual machine using the gcloud command line
 gcloud compute zones list | grep us-central1
-gcloud config set compute/zone us-central1-b
-gcloud compute instances create "my-vm-2" \
---machine-type "n1-standard-1" \
---image-project "debian-cloud" \
---image "debian-9-stretch-v20190213" \
+
+gcloud compute instances create "my-vm-2" --machine-type "n1-standard-1" --image-project "debian-cloud" --image "debian-9-stretch-v20190213" 
 --subnet "default"
 
 
 #Connect between VM instances
-gcloud beta compute ssh --zone "us-central1-b" "my-vm-2" --project "qwiklabs-gcp-02-d18343694552"
+gcloud compute ssh "my-vm-2"
 ping my-vm-1
 ssh my-vm-1
 sudo apt-get install nginx-light -y
 sudo nano /var/www/html/index.nginx-debian.html
 ```  
-Use the arrow keys to move the cursor to the line just below the h1 header. Add text like this "Hi from Hazem" then save & quit.  
+Use the arrow keys to move the cursor to the line just below the h1 header. Add text like this "Hi from Hazem" then save & exit.
+
 ```sh
 curl http://localhost/
 exit
