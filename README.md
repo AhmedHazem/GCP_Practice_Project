@@ -1,6 +1,6 @@
 # GCP_Practice_Project
 
-Google Cloud Fundamentals: Getting Started with GKE:
+## Google Cloud Fundamentals: Getting Started with GKE:
 
 ```sh
 gcloud config set project qwiklabs-gcp-00-d9731b439b2b
@@ -27,7 +27,7 @@ kubectl get services
 ```
 
 
-Google Cloud Fundamentals: Getting Started with Compute Engine
+## Google Cloud Fundamentals: Getting Started with Compute Engine
 
 ```sh
 #Create a virtual machine using the GCP Console
@@ -53,7 +53,9 @@ ping my-vm-1
 ssh my-vm-1
 sudo apt-get install nginx-light -y
 sudo nano /var/www/html/index.nginx-debian.html
-Hi from Hazem
+```  
+Write "Hi from Hazem" then save & quit.  
+```sh
 curl http://localhost/
 exit
 curl http://my-vm-1/
