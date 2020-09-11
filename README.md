@@ -1,6 +1,6 @@
 # GCP_Practice_Project
 
-## Google Cloud Fundamentals: Getting Started with GKE:  
+## Lab: Google Cloud Fundamentals: Getting Started with GKE:  
 
 
 ```sh
@@ -28,7 +28,7 @@ kubectl get services
 ```
 
 
-## Google Cloud Fundamentals: Getting Started with Compute Engine
+## Lab: Google Cloud Fundamentals: Getting Started with Compute Engine:
 
 ```sh
 #Create a virtual machine using the GCP Console
@@ -45,7 +45,6 @@ gcloud compute instances create "my-vm-2" \
 --image-project "debian-cloud" \
 --image "debian-9-stretch-v20190213" \
 --subnet "default"
-exit
 
 
 #Connect between VM instances
@@ -55,7 +54,7 @@ ssh my-vm-1
 sudo apt-get install nginx-light -y
 sudo nano /var/www/html/index.nginx-debian.html
 ```  
-Write "Hi from Hazem" then save & quit.  
+Use the arrow keys to move the cursor to the line just below the h1 header. Add text like this "Hi from Hazem" then save & quit.  
 ```sh
 curl http://localhost/
 exit
