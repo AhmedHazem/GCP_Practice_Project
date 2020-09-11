@@ -76,6 +76,4 @@ In this lab, you learn how to perform the following tasks:
 
 	- Return to the web browser tab in which you viewed your cluster's external IP address, refresh the page.
 
-	- Result:
-		 
-		Nginx web server is still responding.
+	- Result: Nginx web server is still responding.
